@@ -1,0 +1,94 @@
+import data
+
+# Write your functions for each part in the space below.
+
+# Part 1
+
+#Rishub Patel
+def create_rectangle(pointOne: data.Point, pointTwo: data.Point):
+    if pointOne.x > pointTwo.x:
+        right = pointOne.x
+        left = pointTwo.x
+    else:
+        right = pointTwo.x
+        left = pointOne.x
+
+
+    if pointOne.y > pointTwo.y:
+        top = pointOne.y
+        bottom = pointTwo.y
+    else:
+        top = pointTwo.y
+        bottom = pointOne.y
+
+    top-left = data.Point(left, top)
+    bottom-right = data.Point(right, bottom)
+    rectangle = data.Rectangle(top-left, bottom-right)
+
+    return Rectangle
+
+# Part 2
+
+#Rishub Patel
+def shorter_duration_than(durOne: data.Duration, durTwo: data.Duration):
+    totalSecondsOne = (durOne.minutes * 60) + durTwo.seconds
+    totalSecondsTwo = (durTwo.minutes * 60) + durTwo.seconds
+    if totalSecondsOne < totalSecondsTwo:
+        return True
+    else:
+        return False
+
+# Part 3
+
+#Rishub Patel
+def song_shorter_than(songs: list[data.Song], limLength: data.Duration):
+    if songs = []:
+        return []
+    return [track for track in songs if shorter_duration_than(track.duration), max_length]
+
+
+# Part 4
+def running_time(songList: list[Song], songOrder: list[int]):
+    minutes = 0
+    seconds = 0
+        for x in songOrder:
+            minutes = minutes + songList[x].duration.minutes
+            seconds = seconds + songList[x].duration.seconds
+            minutes = minutes + (seconds//60)
+            seconds = seconds%60
+        return data.Duration(minutes, seconds)
+
+# Part 5
+
+#RishubPatel
+def validate_route(cityLinks: list[list[str]], cityNames[list[str]]):
+    if not cityLinks:
+        return False
+    for x in range(len(cityNames)-1):
+        if not([cityNames[x], cityNames[x+1]] in cityLinks or [cityNames[x+1], cityNames[x] in cityLinks]):
+            return False
+    return True
+
+
+# Part 6
+
+#COLE HACKMAN
+def longest_repetition(value: list[int]):
+    if value == []:
+        return None
+
+    max_idx = 0
+    initial_idx = 0
+    length = 1
+    max_len = 1
+    for x in range(1, len(value)):
+        if value[x] == value[x - 1]:
+            length = length + 1
+        else:
+            if length > max_len:
+                max_len = length
+                max_idx = initial_idx
+            length = 1
+            initial_idx = 1
+    return max_idx
+
